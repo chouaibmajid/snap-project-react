@@ -9,6 +9,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Chats from './Chats';
 
 
 
@@ -19,6 +20,10 @@ function App() {
        <Switch>
           <Route path="/preview">
             <Preview />
+          </Route>
+          <Route path="/chats">
+            <Chats />
+
           </Route>
           
           <Route exact path="/">

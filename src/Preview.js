@@ -11,8 +11,9 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import CropIcon from "@mui/icons-material/Crop";
 import TimerIcon from "@mui/icons-material/Timer";
 import SendIcon from "@mui/icons-material/Send";
-import { db, storage } from "./firebase";
-import { v4 as id } from "uuid";
+import { db, storage } from "./fire";
+import firebase from "firebase";
+import { v4 as uuid } from "uuid";
 function Preview() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -30,8 +31,31 @@ function Preview() {
     });
   };
   const sendImage = () => {
+    console.log("clicked");
     const id = uuid();
-    const uploadImg = storage.ref(`posts/${id}`).putString(images, "imgUrl");
+    const uploadTask = storage.ref(`posts/${id}`).putString(images, "data_url");
+    uploadTask.on(
+      "state_changed",
+      null,
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("posts")
+          .child(id)
+          .getDownloadURL()
+          .then((url) => {
+            db.collection("posts").add({
+              imageUrl: url,
+              username: "ch3ayba",
+              read: false,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            });
+            history.replace("/chats");
+          });
+      }
+    );
   };
   return (
     <div className="P">
