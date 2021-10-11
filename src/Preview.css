@@ -1,0 +1,42 @@
+.P{
+position: relative;
+}
+.P__close{
+    position: absolute;
+    color:white;
+    cursor: pointer;
+    top: 0;
+    margin: 5px;
+
+}
+.P__toolbarRight{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.P__toolbarRight > .MuiSvgIcon-root {
+    cursor: pointer;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.P__buttomSend{
+    align-items: center;
+    display: flex;
+    justify-content:space-evenly;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: yellow;
+    border-radius: 30px;
+    margin: 8px;
+    padding: 5px;
+    cursor: pointer;
+
+
+}
