@@ -9,7 +9,6 @@ test project:
   script:
     - yarn install
     - yarn test
-    
 build project:
   stage: build
   image: node
