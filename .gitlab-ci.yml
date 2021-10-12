@@ -1,6 +1,6 @@
 build project:
-  image: node:15
+  image: node
   script:
-    - npm install
-    - npm test
-    - npm run build
+    - yarn install
+    - yarn test
+    - yarn build
