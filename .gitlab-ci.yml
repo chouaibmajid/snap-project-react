@@ -3,4 +3,8 @@ build project:
   script:
     - yarn install
     - yarn test
+<<<<<<< HEAD
     - yarn build
+=======
+
+>>>>>>> 65f1f3700617a57c906071ac5727c5c37bdc806c
