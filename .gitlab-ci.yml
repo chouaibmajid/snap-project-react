@@ -5,14 +5,14 @@ stages:
 
 test project:
   stage: test
-  image: node:15
+  image: node
   script:
     - yarn install
     - yarn test
     
 build project:
   stage: build
-  image: node:15
+  image: node
   script:
     - yarn start
     - yarn build
@@ -22,7 +22,7 @@ build project:
 
 netlify:
   stage: deploy
-  image: node:15
+  image: node
   script:
     - npm install -g netlify-cli
     - netlify deploy --dir=build --prod
