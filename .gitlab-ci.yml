@@ -8,6 +8,7 @@ build project:
   stage: build
   image: node
   script:
+    - npm install
     - npm start
     - npm build
   artifacts:
