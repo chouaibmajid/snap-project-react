@@ -8,8 +8,8 @@ build project:
   stage: build
   image: node
   script:
-    - yarn start
-    - yarn build
+    - npm start
+    - npm build
   artifacts:
     paths:
       - build/ 
@@ -18,5 +18,5 @@ netlify:
   stage: deploy
   image: node
   script:
-    - yarn install -g netlify-cli
+    - npm install -g netlify-cli
     - netlify deploy --dir=build --prod
