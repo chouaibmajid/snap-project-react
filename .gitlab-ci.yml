@@ -1,5 +1,4 @@
 stages:
-  - test
   - build
   - deploy
 
@@ -13,8 +12,9 @@ build project:
   stage: build
   image: node
   script:
-    - yarn start
-    - yarn build
+    - npm install
+    - npm start
+    - npm build
   artifacts:
     paths:
       - build/ 
